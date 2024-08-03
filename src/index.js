@@ -5,10 +5,23 @@ import connectDB from "./DB/index.js";
 // data base se bat karne pe problem aashakti he
 // uskeli ae use try()...catch()... use kare.
 // user async and await
-
 dotenv.config({path: './env'})
 
 connectDB()
+.then(() =>{
+   app.listen(process.env.PORT || 8000, () => {
+      console.log(` Server is running at post :
+         ${process.env.PORT}`);
+         app.on("error", (err) =>{
+          console.log(`Error:${err}`);
+          throw err;
+         })   
+   })
+})
+.catch((err) => {
+  console.log(" MONGODB connection failed: " + err);
+  
+})
 
 
 
