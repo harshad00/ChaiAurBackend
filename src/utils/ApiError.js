@@ -5,7 +5,7 @@ class ApiError extends Error {
     statusCode, // The HTTP status code associated with the error
     message = "Something went wrong", // The error message, defaulting to "Something went wrong"
     errors = [], // An optional array to hold additional error details
-    statck = "" // An optional string to hold the stack trace, defaulting to an empty string
+    stack = "" // An optional string to hold the stack trace, defaulting to an empty string
   ) {
     // Call the parent class (Error) constructor with the error message
     super(message);
@@ -18,8 +18,8 @@ class ApiError extends Error {
     this.errors = errors; // Store additional error details
 
     // Check if a stack trace was provided
-    if (statck) {
-      this.statck = statck; // Set the stack trace if provided
+    if (stack) {
+      this.stack = stack; // Set the stack trace if provided
     } else {
       // Otherwise, capture the stack trace using Error.captureStackTrace
       Error.captureStackTrace(this, this.constructor);
