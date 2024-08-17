@@ -15,7 +15,8 @@ const uploadOnCloudnary = async (localFilePath) => {
       resource_type: "auto",
     });
     // file uplod than
-    console.log("file in=s uploaded to cloud", response.url);
+    // console.log("file in=s uploaded to cloud", response.url);
+    fs.unlinkSync(localFilePath);
     return response;
   } catch (error) {
     fs.unlinkSync(localFilePath); // remove the file

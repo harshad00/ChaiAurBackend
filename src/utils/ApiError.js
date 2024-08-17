@@ -13,7 +13,7 @@ class ApiError extends Error {
     // Initialize custom properties
     this.statusCode = statusCode; // Set the HTTP status code
     this.data = null; // Initialize data to null (can be used to store additional information)
-    this.massage = massage; // Incorrectly named property; should be `this.message`
+    this.message = message; // Incorrectly named property; should be `this.message`
     this.success = false; // A Boolean indicating that the operation was not successful
     this.errors = errors; // Store additional error details
 
